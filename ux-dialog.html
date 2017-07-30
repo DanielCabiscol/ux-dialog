@@ -1,6 +1,7 @@
 <link rel="import" href="../polymer/polymer-element.html">
-<link rek="import" href="../paper-dialog/paper-dialog.html">
-<link rek="import" href="../paper-dialog-behavior/paper-dialog-behavior.html">
+<link rek="import" href="bower_components/paper-dialog/paper-dialog.html">
+<link rek="import" href="bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
+<link rek="import" href="bower_components/paper-button/paper-button.html">
 
 <dom-module id="ux-dialog">
   <template>
@@ -10,7 +11,12 @@
       }
     </style>
     
-
+    <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+      <h2>Fitxa de [[name]] [[surname]]</h2>
+      <paper-button>Enviar Email</paper-button>
+      <paper-button>Trucar</paper-button>
+      
+    </paper-dialog>
 
   </template>
 
@@ -30,6 +36,14 @@
           prop1: {
             type: String,
             value: 'ux-dialog'
+          },
+
+          name:{
+            type: String,
+          },
+
+          surname: {
+            type: String
           }
         };
       }
